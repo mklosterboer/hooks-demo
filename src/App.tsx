@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
+import { Examples } from "./Examples/index";
+
+//const { Example1, Example2, Example3, Example4, Example5 } = Examples;
+
 const App: React.FC = () => {
+  const [activeExampleIdx, setActiveExampleIdx] = useState(0);
+  let ActiveExample = Examples[activeExampleIdx];
+
+  useEffect(() => {
+    ActiveExample = Examples[activeExampleIdx];
+  })
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        React Hooks Demo
       </header>
+      <div className="examples-list">
+        <div className="example-link"><button>Example 1</button></div>
+        <div className="example-link"><button>Example 2</button></div>
+        <div className="example-link"><button>Example 3</button></div>
+        <div className="example-link"><button>Example 4</button></div>
+        <div className="example-link"><button>Example 5</button></div>
+      </div>
+      <div className="example-container">
+        <ActiveExample />
+      </div>
     </div>
   );
 }
