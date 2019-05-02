@@ -3,10 +3,8 @@ import './App.css';
 
 import { Examples } from "./Examples/index";
 
-//const { Example1, Example2, Example3, Example4, Example5 } = Examples;
-
 const App: React.FC = () => {
-  const [activeExampleIdx, setActiveExampleIdx] = useState(0);
+  const [activeExampleIdx, setActiveExampleIdx] = useState(1);
   let ActiveExample = Examples[activeExampleIdx];
 
   useEffect(() => {
@@ -19,11 +17,13 @@ const App: React.FC = () => {
         React Hooks Demo
       </header>
       <div className="examples-list">
-        <div className="example-link"><button>Example 1</button></div>
-        <div className="example-link"><button>Example 2</button></div>
-        <div className="example-link"><button>Example 3</button></div>
-        <div className="example-link"><button>Example 4</button></div>
-        <div className="example-link"><button>Example 5</button></div>
+        {Examples.map((ex, idx) => (
+          <div className="example-link">
+            <button onClick={() => setActiveExampleIdx(idx)}>
+              Example {idx + 1}
+            </button>
+          </div>
+        ))}
       </div>
       <div className="example-container">
         <ActiveExample />
