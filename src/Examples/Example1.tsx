@@ -12,7 +12,7 @@ export const Example1: React.FC = () => {
       </button>
       <hr style={{width: "100%"}}/>
         <div>
-            useState creates a local variable and an updater function to save data outside of the render cycles. 
+            useState creates a local variable and an updater function to save data outside of the render cycles. <br /><br />
             Each time a component is rendered, the previous state is assigned to the 'count' variable.
         </div>
     </>

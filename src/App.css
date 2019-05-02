@@ -48,13 +48,13 @@ body {
   padding: 10px;
 }
 
-.fruit-counter-container {
+.counter-container {
   display: flex;
   flex-direction: row;
   align-content: center;
   margin: 0px 0px 12px;
 }
 
-.fruit-counter-container button {
+.counter-container button {
   margin-right: 8px;
 }
