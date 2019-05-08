@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { exampleProps } from './models';
 
-export const Example4: React.FC = () => {
+export const Example4 = (props: exampleProps) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -19,14 +20,17 @@ export const Example4: React.FC = () => {
       }, []);
 
     return (
-        
-        <div >
+        <div>
+            <h2 className="exampleHeader">Fetch Data</h2>
+            {props.description}
+            <hr style={{width: "100%"}}/>
+
             {loading ? (
                 "Loading..."
             ) : (
                 <div>
                     {data.map(({id, title, body}) => (
-                        <div key={`post-${id}`}>
+                        <div key={`post-${id}`} className="post">
                             <strong>{title}</strong>
                             <div>
                                 {body}

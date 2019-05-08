@@ -36,7 +36,7 @@ button:focus {
 }
 
 .activeIndicator {
-  background-color: red;
+  background-color: #db1010;
   height: 3px;
   width: 100%;
   margin-top: 3px;
@@ -62,6 +62,7 @@ button:focus {
   align-content: flex-start;
   flex-direction: column;
   padding: 10px;
+  overflow-y: scroll;
 }
 
 .exampleHeader {
@@ -79,4 +80,8 @@ button:focus {
 
 .counter-container button {
   margin-right: 8px;
+}
+
+.post {
+  margin-bottom: 20px;
 }

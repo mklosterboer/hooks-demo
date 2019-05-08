@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { exampleProps } from './models';
 
-export const Example2: React.FC = () => {
+export const Example2 = (props: exampleProps) => {
     const [orangeCount, setOrangeCount] = useState(0);
     const [appleCount, setAppleCount] = useState(0);
     const [bananaCount, setBananaCount] = useState(0);
@@ -33,10 +34,7 @@ export const Example2: React.FC = () => {
                 Number of Bananas: {bananaCount}
             </div>
             <hr style={{width: "100%"}}/>
-            <div>
-                useState can be be used to create multiple local state variables and they all have independent updater functions. <br /><br />
-                State variables are still used the same way. For example, the count of oranges is still shared by the whole component. 
-            </div>
+            {props.description}
         </>
     );
 }

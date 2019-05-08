@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { exampleProps } from './models';
 
-export const Example1: React.FC = () => {
+export const Example1 = (props: exampleProps) => {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0);
 
@@ -14,10 +15,7 @@ export const Example1: React.FC = () => {
         You clicked {count} times
       </div>
       <hr style={{width: "100%"}}/>
-        <div>
-            useState creates a local variable and an updater function to save data outside of the render cycles. <br /><br />
-            Each time a component is rendered, the previous state is assigned to the 'count' variable.
-        </div>
+      {props.description}
     </>
   );
 }

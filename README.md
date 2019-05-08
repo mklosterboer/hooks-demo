@@ -3,6 +3,14 @@ This repo is meant to show examples of Hooks being used for simple problems. I m
 
 This was built mainly from examples on reactjs.org and overreacted.io. 
 
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+## Presentation
+https://slides.com/michaelklosterboer/react-v16-8
+
+## Live CodeSandBox
+https://codesandbox.io/s/github/mklosterboer/hooks-demo
+
 ## Install and Run
 
 ```sh
@@ -12,8 +20,6 @@ $ npm install
 $ npm start
 ```
 
-## Presentation
-https://slides.com/michaelklosterboer/react-v16-8
 
 ## Other Resources
 * React Docs on Hooks - https://reactjs.org/hooks
