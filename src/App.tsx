@@ -4,20 +4,21 @@ import './App.css';
 import { Examples } from "./Examples/index";
 
 const App: React.FC = () => {
-  const [activeExampleIdx, setActiveExampleIdx] = useState(1);
+  const [activeExampleIdx, setActiveExampleIdx] = useState(0);
   let ActiveExample = Examples[activeExampleIdx];
 
   return (
     <div className="App">
-      <header className="App-header">
+      <h1 className="App-header">
         React Hooks Demo
-      </header>
+      </h1>
       <div className="examples-list">
         {Examples.map((ex, idx) => (
           <div className="example-link">
-            <button onClick={() => setActiveExampleIdx(idx)}>
+            <button className="exampleButtons" onClick={() => setActiveExampleIdx(idx)}>
               Example {idx + 1}
             </button>
+            {idx === activeExampleIdx && <div className="activeIndicator">&nbsp;</div>}
           </div>
         ))}
       </div>

@@ -6,6 +6,7 @@ export const Example1: React.FC = () => {
 
   return (
     <>
+      <h2 className="exampleHeader">Basic useState Example</h2>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>
         Click me

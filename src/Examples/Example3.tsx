@@ -38,7 +38,7 @@ export const Example3: React.FC = () => {
                 useEffect fires every time the component is re-rendered, unless a dependecy array is passed. <br /><br />
                 In this example, the title keeps track of Counter 1. Since this effect only cares if the value of Counter 1 has been updated,
                 we pass 'count1' in an array to useEffect. <br /><br />
-                As the component continues to render when we increase Counter 2, we do not run the potentially expensive calculation in the useEffect, unless 'count1' changes between renders. 
+                As the component continues to render, when we increase Counter 2, we do not run the potentially expensive calculation in the useEffect, unless 'count1' changes between renders. 
             </div>
     </>
     );
