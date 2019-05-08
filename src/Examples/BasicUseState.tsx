@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
-import { exampleProps } from './models';
+import { example } from './models';
 
-export const BasicUseState = (props: exampleProps) => {
-  // Declare a new state variable, which we'll call "count"
+const BasicUseState = () => {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <h2 className="exampleHeader">Basic useState</h2>
-      {props.description}
-      <hr style={{width: "100%"}}/>
-      
       <div className="counter-container">
         <button onClick={() => setCount(count + 1)}>
           Click me
@@ -19,4 +14,17 @@ export const BasicUseState = (props: exampleProps) => {
       </div>
     </>
   );
+}
+
+const basicUseStateDesc = (
+  <div>
+      useState creates a local variable and an updater function to save data outside of the render cycles. <br /><br />
+      Each time a component is rendered, the previous state is assigned to the 'count' variable.
+  </div>
+);
+
+export const BasicUseStateExample: example = {
+  title: "Basic useState",
+  description: basicUseStateDesc,
+  component: BasicUseState,
 }

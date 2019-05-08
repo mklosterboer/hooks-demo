@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { exampleProps } from './models';
 
-export const FetchData = (props: exampleProps) => {
+const FetchData = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -19,10 +18,6 @@ export const FetchData = (props: exampleProps) => {
 
     return (
         <>
-            <h2 className="exampleHeader">Fetch Data</h2>
-            {props.description}
-            <hr style={{width: "100%"}}/>
-
             {loading ? (
                 "Loading..."
             ) : (
@@ -39,4 +34,18 @@ export const FetchData = (props: exampleProps) => {
             )}
         </>
     )
+}
+
+const fetchDataDesc = (
+    <div>
+        Below is data fetched and then formatted. Most of the magic for this happens in the code. <br /><br />
+        fetchUrl is a function that when called, sets the state with data and updates the 'loading' status. <br /><br />
+        We use useEffect to call fetchUrl with an empty dependecy array so that is only runs once, when mounted. 
+    </div>
+);
+
+export const FetchDataExample = {
+    title: "Fetch Data",
+    description: fetchDataDesc,
+    component: FetchData,
 }

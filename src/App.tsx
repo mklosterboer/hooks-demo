@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './App.css';
 
 import { Examples } from "./Examples/index";
+import { ExampleDescription } from "./ExampleDescription";
 
 const App: React.FC = () => {
   const [activeExampleIdx, setActiveExampleIdx] = useState(0);
-  let ActiveExample = Examples[activeExampleIdx].component;
-  const activeExampleDesc = Examples[activeExampleIdx].description;
+  let ActvExample = Examples[activeExampleIdx]
 
   return (
     <div className="App">
@@ -24,7 +24,8 @@ const App: React.FC = () => {
         ))}
       </div>
       <div className="example-container">
-        <ActiveExample description={activeExampleDesc}/>
+        <ExampleDescription description={ActvExample.description} title={ActvExample.title}/>
+        <ActvExample.component />
       </div>
     </div>
   );

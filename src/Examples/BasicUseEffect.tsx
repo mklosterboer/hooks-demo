@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { exampleProps } from './models';
 
-export const BasicUseEffect = (props: exampleProps) => {
+const BasicUseEffect = () => {
     const [count1, setCount1] = useState(0);
     const [count2, setCount2] = useState(0);
     const [updatedTime, setUpdatedTime] = useState((new Date()).toLocaleTimeString())
@@ -21,10 +20,6 @@ export const BasicUseEffect = (props: exampleProps) => {
    
     return (
     <>
-        <h2 className="exampleHeader">Basic useEffect</h2>
-        {props.description}
-        <hr style={{width: "100%"}}/>
-
         <span style={{textAlign: "center"}}>Title last updated: {updatedTime}</span>
         <div className="counter-container">
             <button onClick={handleClick}>
@@ -40,4 +35,19 @@ export const BasicUseEffect = (props: exampleProps) => {
         </div>
     </>
     );
+}
+
+const basicUseEffectDesc = (
+    <div>
+        useEffect fires every time the component is re-rendered, unless a dependecy array is passed. <br /><br />
+        In this example, the title keeps track of Counter 1. Since this effect only cares if the value of Counter 1 has been updated,
+        we pass 'count1' in an array to useEffect. <br /><br />
+        As the component continues to render, when we increase Counter 2, we do not run the potentially expensive calculation in the useEffect, unless 'count1' changes between renders. 
+    </div>
+);
+
+export const BasicUseEffectExample = {
+    title: "Basic useEffect", 
+    description: basicUseEffectDesc,
+    component: BasicUseEffect, 
 }
