@@ -67,6 +67,7 @@ button:focus {
 .exampleHeader {
   text-align: center;
   text-decoration: underline;
+  margin-top: 0px;
 }
 
 .counter-container {
