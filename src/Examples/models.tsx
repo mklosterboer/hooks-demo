@@ -1,4 +1,4 @@
-export type example =  {
+export type example = {
     title: string,
     component: () => JSX.Element,
     description: JSX.Element,

@@ -7,9 +7,9 @@ import { FetchDataExample } from './FetchData';
 import { CustomFetchDataExample } from './CustomFetchData';
 
 export const Examples: example[] = [
-  BasicUseStateExample,
-  MultiUseStateExample,
-  BasicUseEffectExample,
-  FetchDataExample,
-  CustomFetchDataExample,
+    BasicUseStateExample,
+    MultiUseStateExample,
+    BasicUseEffectExample,
+    FetchDataExample,
+    CustomFetchDataExample,
 ];

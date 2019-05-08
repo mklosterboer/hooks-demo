@@ -18,8 +18,8 @@ const BasicUseState = () => {
 
 const basicUseStateDesc = (
   <div>
-      useState creates a local variable and an updater function to save data outside of the render cycles. <br /><br />
-      Each time a component is rendered, the previous state is assigned to the 'count' variable.
+    useState creates a local variable and an updater function to save data outside of the render cycles. <br /><br />
+    Each time a component is rendered, the previous state is assigned to the 'count' variable.
   </div>
 );
 

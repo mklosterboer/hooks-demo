@@ -39,7 +39,7 @@ const MultiUseState = () => {
 const multiUseStateDesc = (
     <div>
         useState can be be used to create multiple local state variables and they all have independent updater functions. <br /><br />
-        State variables are still used the same way. For example, the count of oranges is still shared by the whole component. 
+        State variables are still used the same way. For example, the count of oranges is still shared by the whole component.
     </div>
 );
 
