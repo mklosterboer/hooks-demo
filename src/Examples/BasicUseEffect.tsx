@@ -22,6 +22,9 @@ export const BasicUseEffect = (props: exampleProps) => {
     return (
     <>
         <h2 className="exampleHeader">Basic useEffect</h2>
+        {props.description}
+        <hr style={{width: "100%"}}/>
+
         <span style={{textAlign: "center"}}>Title last updated: {updatedTime}</span>
         <div className="counter-container">
             <button onClick={handleClick}>
@@ -35,8 +38,6 @@ export const BasicUseEffect = (props: exampleProps) => {
             </button>
             Counter 2: {count2}
         </div>
-        <hr style={{width: "100%"}}/>
-        {props.description}
     </>
     );
 }

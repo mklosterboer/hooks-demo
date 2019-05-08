@@ -9,6 +9,9 @@ export const MultiUseState = (props: exampleProps) => {
     return (
         <>
             <h2 className="exampleHeader">Multiple useState</h2>
+            {props.description}
+            <hr style={{width: "100%"}}/>
+
             <div className="counter-container">
                 <button onClick={() => setOrangeCount(orangeCount + 1)}>
                     Click me
@@ -33,8 +36,6 @@ export const MultiUseState = (props: exampleProps) => {
                 </button>
                 Number of Bananas: {bananaCount}
             </div>
-            <hr style={{width: "100%"}}/>
-            {props.description}
         </>
     );
 }

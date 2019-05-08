@@ -5,22 +5,20 @@ export const FetchData = (props: exampleProps) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const url = "https://jsonplaceholder.typicode.com/posts?userId=1";
-
-    const fetchUrl = async () => {
-        const response = await fetch(url);
-        const json = await response.json();
-        
-        setData(json);
-        setLoading(false);
-    }
-
     useEffect(() => {
-        fetchUrl();
+        const fetchPosts = async () => {
+            const response = await fetch("https://jsonplaceholder.typicode.com/posts?userId=1");
+            const json = await response.json();
+            
+            setData(json);
+            setLoading(false);
+        }
+
+        fetchPosts();
       }, []);
 
     return (
-        <div>
+        <>
             <h2 className="exampleHeader">Fetch Data</h2>
             {props.description}
             <hr style={{width: "100%"}}/>
@@ -39,6 +37,6 @@ export const FetchData = (props: exampleProps) => {
                     ))}
                 </div>
             )}
-        </div>
+        </>
     )
 }

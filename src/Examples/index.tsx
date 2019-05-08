@@ -39,7 +39,9 @@ const fetchDataDesc = (
 
 const customFetchDataDesc = (
     <div>
-        Need a Desc
+        This works the same as the Fetch Data demo but has extracted useFetch as a custom hook. <br /><br />
+        Custom hooks can use hooks and store their own state. In this example, we may not need this to be extracted, 
+        but now this logic, including state management, can be used in other componenets. 
     </div>
   )
 
