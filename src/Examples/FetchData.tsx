@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { exampleProps } from './models';
 
-export const Example4 = (props: exampleProps) => {
+export const FetchData = (props: exampleProps) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 

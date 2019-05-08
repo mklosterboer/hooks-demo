@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { exampleProps } from './models';
 
-export const Example2 = (props: exampleProps) => {
+export const MultiUseState = (props: exampleProps) => {
     const [orangeCount, setOrangeCount] = useState(0);
     const [appleCount, setAppleCount] = useState(0);
     const [bananaCount, setBananaCount] = useState(0);

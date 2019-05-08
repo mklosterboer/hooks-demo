@@ -1,11 +1,11 @@
 import React from 'react';
 import { example } from "./models";
 
-import { Example1 } from './Example1';
-import { Example2 } from './Example2';
-import { Example3 } from './Example3';
-import { Example4 } from './Example4';
-import { Example5 } from './Example5';
+import { BasicUseState } from './BasicUseState';
+import { MultiUseState } from './MultiUseState';
+import { BasicUseEffect } from './BasicUseEffect';
+import { FetchData } from './FetchData';
+import { CustomFetchData } from './CustomFetchData';
 
 const basicUseStateDesc = (
     <div>
@@ -44,9 +44,9 @@ const customFetchDataDesc = (
   )
 
 export const Examples: example[] = [
-{title: "Basic useState", component: Example1, description: basicUseStateDesc},
-    {title: "Multiple useState", component: Example2, description: multiUseStateDesc},
-    {title: "Basic useEffect", component: Example3, description: basicUseEffectDesc},
-    {title: "Fetch Data", component: Example4, description: fetchDataDesc},
-    {title: "Custom Fetch Data", component: Example5, description: customFetchDataDesc},
+{title: "Basic useState", component: BasicUseState, description: basicUseStateDesc},
+    {title: "Multiple useState", component: MultiUseState, description: multiUseStateDesc},
+    {title: "Basic useEffect", component: BasicUseEffect, description: basicUseEffectDesc},
+    {title: "Fetch Data", component: FetchData, description: fetchDataDesc},
+    {title: "Custom Fetch Data", component: CustomFetchData, description: customFetchDataDesc},
 ];

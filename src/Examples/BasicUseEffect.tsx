@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { exampleProps } from './models';
 
-export const Example3 = (props: exampleProps) => {
+export const BasicUseEffect = (props: exampleProps) => {
     const [count1, setCount1] = useState(0);
     const [count2, setCount2] = useState(0);
     const [updatedTime, setUpdatedTime] = useState((new Date()).toLocaleTimeString())
