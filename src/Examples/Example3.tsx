@@ -21,7 +21,7 @@ export const Example3: React.FC = () => {
     return (
     <>
         <h2 className="exampleHeader">Basic useEffect</h2>
-        <p style={{textAlign: "center"}}>Title last updated: {updatedTime}</p>
+        <span style={{textAlign: "center"}}>Title last updated: {updatedTime}</span>
         <div className="counter-container">
             <button onClick={handleClick}>
                 Click me

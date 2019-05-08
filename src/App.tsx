@@ -5,7 +5,7 @@ import { Examples } from "./Examples/index";
 
 const App: React.FC = () => {
   const [activeExampleIdx, setActiveExampleIdx] = useState(0);
-  let ActiveExample = Examples[activeExampleIdx];
+  let ActiveExample = Examples[activeExampleIdx].component;
 
   return (
     <div className="App">
@@ -16,7 +16,7 @@ const App: React.FC = () => {
         {Examples.map((ex, idx) => (
           <div className="example-link">
             <button className="exampleButtons" onClick={() => setActiveExampleIdx(idx)}>
-              Example {idx + 1}
+              {ex.title}
             </button>
             {idx === activeExampleIdx && <div className="activeIndicator">&nbsp;</div>}
           </div>
