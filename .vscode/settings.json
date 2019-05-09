@@ -1,8 +1,0 @@
-{
-    "editor.fontLigatures": true,
-    "editor.renderWhitespace": "boundary",
-    "editor.fontFamily": "Fira Code",
-    "editor.cursorBlinking": "smooth",
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
-}
