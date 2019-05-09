@@ -25,5 +25,6 @@ $ npm start
 * [React Docs on Hooks](https://reactjs.org/hooks) - Great docs with examples and an FAQ
 * [Dan Abramov's Blog](https://overreacted.io/) - Regularly posts on new topics in React
 * [A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/) - Deep dive on useEffect and 'Thinking in Hooks'
+* [How to Fetch Data with React Hooks](https://www.robinwieruch.de/react-hooks-fetch-data/) - Walks through useState, useEffect and creating custom hooks for data fetching
 * [React Today and Tomorrow (58min)](https://www.youtube.com/watch?v=V-QO-KO90iQ) - Intro of hooks at React Conf 2018
 * [Intro to React Hooks (30min)](https://developers.facebook.com/videos/2019/intro-to-react-hooks/) - Guided walkthrough of React Hooks at Facebook's F8 Conference
