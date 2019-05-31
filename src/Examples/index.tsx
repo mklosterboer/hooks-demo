@@ -5,6 +5,7 @@ import { MultiUseStateExample } from './MultiUseState';
 import { BasicUseEffectExample } from './BasicUseEffect';
 import { FetchDataExample } from './FetchData';
 import { CustomFetchDataExample } from './CustomFetchData';
+import { BasicUseReducerExample } from './BasicUseReducer';
 
 export const Examples: example[] = [
     BasicUseStateExample,
@@ -12,4 +13,5 @@ export const Examples: example[] = [
     BasicUseEffectExample,
     FetchDataExample,
     CustomFetchDataExample,
+    BasicUseReducerExample
 ];
