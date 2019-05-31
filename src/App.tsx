@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import './App.css';
 
 import { Examples } from "./Examples/index";
-import { ExampleDescription } from "./ExampleDescription";
+import { ExampleDescription } from "./Components/ExampleDescription";
 
 const App: React.FC = () => {
-    const [activeExampleIdx, setActiveExampleIdx] = useState(0);
+    const [activeExampleIdx, setActiveExampleIdx] = useState(5);
     let ActvExample = Examples[activeExampleIdx]
 
     return (
@@ -16,9 +17,9 @@ const App: React.FC = () => {
             <div className="examples-list">
                 {Examples.map((ex, idx) => (
                     <div key={`ex-${idx}-${ex.title}`} className="example-link">
-                        <button className="exampleButtons" onClick={() => setActiveExampleIdx(idx)}>
+                        <Button variant={"secondary"} size="sm" onClick={() => setActiveExampleIdx(idx)}>
                             {ex.title}
-                        </button>
+                        </Button>
                         {idx === activeExampleIdx && <div className="activeIndicator">&nbsp;</div>}
                     </div>
                 ))}
