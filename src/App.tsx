@@ -6,7 +6,7 @@ import { Examples } from "./Examples/index";
 import { ExampleDescription } from "./Components/ExampleDescription";
 
 const App: React.FC = () => {
-    const [activeExampleIdx, setActiveExampleIdx] = useState(5);
+    const [activeExampleIdx, setActiveExampleIdx] = useState(0);
     let ActvExample = Examples[activeExampleIdx]
 
     return (
