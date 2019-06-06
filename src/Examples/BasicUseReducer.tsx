@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import { DropdownButton, Dropdown, Button } from 'react-bootstrap';
 import { UnsavedChangesModal } from '../Components/UnsavedChangesModal';
 
-interface basicUseReducerState {
+interface State {
     currentValueIdx: number;
     values: string[];
     inputValue: string;
@@ -11,7 +11,15 @@ interface basicUseReducerState {
     newSelectionIdx: number;
 }
 
-const intialState: basicUseReducerState = {
+type Action =
+    | { type: 'modalContinue' }
+    | { type: 'modalCancel' }
+    | { type: 'save' }
+    | { type: 'switchValues', idx: number }
+    | { type: 'updateInput', value: string }
+    | { type: 'openModal', newSelectionIdx: number };
+
+const intialState: State = {
     currentValueIdx: 0,
     values: ["value 1", "value 2", "value 3"],
     inputValue: "value 1",
@@ -46,8 +54,8 @@ const BasicUseReducer = () => {
     return (
         <>
             <div className="form-container">
-                <DropdownButton 
-                    size="sm" 
+                <DropdownButton
+                    size="sm"
                     id="valueDropDown"
                     title={`Value ${state.currentValueIdx + 1}`}
                 >
@@ -76,8 +84,8 @@ const BasicUseReducer = () => {
     )
 }
 
-const reducer = (state: basicUseReducerState, action: any) => {
-    let newState: basicUseReducerState = { ...state };
+const reducer = (state: State, action: Action) => {
+    let newState: State = { ...state };
     switch (action.type) {
         case 'save':
             newState.values[state.currentValueIdx] = state.inputValue;
@@ -116,7 +124,7 @@ const basicUseReducerDesc = (
         useReducer can be used to be more declarative with state changes. <br /><br />
         Instead of modifying state varibles directly in the component, you 'dispatch' actions to a
         reducer which contains state. The reducer then makes the changes and returns the new state back to the component;<br /><br />
-        In this example, the drop down selector will switch an input between three values that can be saved. 
+        In this example, the drop down selector will switch an input between three values that can be saved.
         If you try to switch to the other values without saving, you will get a modal that warns you you will lose the data and offers to continue or cancel. <br /><br />
         This helps to describe what you are trying to do and seperate it from actually doing it, i.e. modifying state. <br /><br />
         The modal is uncontrolled and just uses functions in the parent component.
