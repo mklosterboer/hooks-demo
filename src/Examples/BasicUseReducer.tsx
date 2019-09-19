@@ -31,7 +31,7 @@ const intialState: State = {
 const BasicUseReducer = () => {
     const [state, dispatch] = useReducer(reducer, intialState);
 
-    const handleSelection = (idx: number) => {
+    const handleSelection = (idx: number): void => {
         if (state.currentValueIdx !== idx) {
             if (state.inputDirty) {
                 dispatch({ type: 'openModal', newSelectionIdx: idx });
@@ -41,25 +41,23 @@ const BasicUseReducer = () => {
         }
     }
 
-    const dropDownItems = state.values.map((value, idx) => (
-        <Dropdown.Item
-            key={idx}
-            onClick={() => handleSelection(idx)}
-            active={idx === state.currentValueIdx}
-        >
-            Value {idx + 1}
-        </Dropdown.Item>
-    ));
-
     return (
         <>
             <div className="form-container">
                 <DropdownButton
                     size="sm"
                     id="valueDropDown"
-                    title={`Value ${state.currentValueIdx + 1}`}
+                    title={`Input ${state.currentValueIdx + 1}`}
                 >
-                    {dropDownItems}
+                    {state.values.map((value, idx) => (
+                        <Dropdown.Item
+                            key={idx}
+                            onClick={() => handleSelection(idx)}
+                            active={idx === state.currentValueIdx}
+                        >
+                            Input {idx + 1}
+                        </Dropdown.Item>
+                    ))}
                 </DropdownButton>
                 <input
                     type="text"
@@ -123,10 +121,13 @@ const basicUseReducerDesc = (
     <div>
         useReducer can be used to be more declarative with state changes. <br /><br />
         Instead of modifying state varibles directly in the component, you 'dispatch' actions to a
-        reducer which contains state. The reducer then makes the changes and returns the new state back to the component;<br /><br />
-        In this example, the drop down selector will switch an input between three values that can be saved.
-        If you try to switch to the other values without saving, you will get a modal that warns you you will lose the data and offers to continue or cancel. <br /><br />
-        This helps to describe what you are trying to do and seperate it from actually doing it, i.e. modifying state. <br /><br />
+        reducer which contains state. The reducer then makes the changes and returns the new state
+        back to the component;<br /><br />
+        In this example, the drop down selector will switch an input between three values that can
+        be saved. If you try to switch to the other values without saving, you will get a modal
+        that warns you you will lose the data and offers to continue or cancel. <br /><br />
+        This helps to describe what you are trying to do and seperate it from actually doing it,
+        i.e. modifying state. <br /><br />
         The modal is uncontrolled and just uses functions in the parent component.
     </div>
 );
