@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const useFetch = (url: string) => {
-    const [data, setData] = useState([]);
+function useFetch<T>(url: string): [T[], boolean] {
+    const [data, setData] = useState<T[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -9,7 +9,7 @@ const useFetch = (url: string) => {
             const response = await fetch(url);
             const json = await response.json();
 
-            setData(json);
+            if (json && json.length) setData(json);
             setLoading(false);
         }
 
@@ -19,8 +19,14 @@ const useFetch = (url: string) => {
     return [data, loading];
 }
 
+interface Post {
+    id: string;
+    title: string;
+    body: string;
+}
+
 const CustomFetchData = () => {
-    const [data, loading] = useFetch("https://jsonplaceholder.typicode.com/posts?userId=1");
+    const [posts, loading] = useFetch<Post>("https://jsonplaceholder.typicode.com/posts?userId=1");
 
     return (
         <>
@@ -28,7 +34,7 @@ const CustomFetchData = () => {
                 "Loading..."
             ) : (
                     <div>
-                        {(data as []).map(({ id, title, body }) => (
+                        {posts.map(({ id, title, body }) => (
                             <div key={`post-${id}`} className="post">
                                 <strong>{title}</strong>
                                 <div>
